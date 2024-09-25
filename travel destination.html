@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour in Kathmandu</title>
+    <style>
+        body {
+            background-color: black; /* Black background for high contrast */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white; /* White text for high visibility */
+        }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background: url('https://example.com/header-background.jpg') no-repeat center center; /* Background image */
+            background-size: cover; /* Cover the entire header area */
+            border-bottom: 5px solid white; /* White border at the bottom */
+        }
+
+        header img {
+            max-width: 80%; /* Ensures the image is responsive */
+            height: auto; /* Maintains the aspect ratio */
+            border-radius: 15px; /* Rounds the corners of the image */
+            margin-top: 20px; /* Adds some space above the image */
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5); /* Adds a white shadow for depth */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000; /* Black background */
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3); /* Shadow for depth */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* White hover effect */
+            transform: scale(1.05); /* Slightly enlarges the link */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: url('https://example.com/container-background.jpg') no-repeat center center; /* Background image */
+            background-size: cover; /* Cover the entire container area */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* Adds white shadow for depth */
+            transition: transform 0.3s; /* Smooth hover effect */
+        }
+
+        .container:hover {
+            transform: scale(1.02); /* Slightly enlarges the container on hover */
+        }
+
+        h1, h2 {
+            color: white; /* White for headings */
+        }
+
+        .explore-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .explore-item {
+            display: flex; /* Flexbox for layout */
+            align-items: center; /* Center items vertically */
+            margin: 15px 0;
+            transition: background-color 0.3s; /* Smooth hover effect */
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.05); /* Slight transparent background */
+        }
+
+        .explore-item:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+        }
+
+        .explore-item img {
+            width: 80px; /* Increased width for larger images */
+            height: 80px; /* Set a fixed height to maintain aspect ratio */
+            margin-right: 15px; /* Increased space between image and text */
+            border-radius: 10px; /* More rounded corners for a cute appearance */
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow for depth */
+            transition: transform 0.3s; /* Smooth hover effect */
+        }
+
+        .explore-item img:hover {
+            transform: scale(1.1); /* Slightly enlarges the image on hover */
+        }
+
+        .attractions-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Distribute items evenly */
+        }
+
+        .attraction-item {
+            width: 48%; /* Set width to allow two items per row */
+            margin-bottom: 20px; /* Space between rows */
+            border-radius: 10px;
+            overflow: hidden; /* Ensures border radius works */
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Light shadow for depth */
+        }
+
+        .attraction-item img {
+            width: 100%; /* Image covers the whole item */
+            height: 200px; /* Fixed height for uniformity */
+            object-fit: cover; /* Cover the area without distorting */
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: white; /* White background for inputs */
+            color: black; /* Black text for inputs */
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3); /* Adds white shadow */
+        }
+
+        button {
+            padding: 10px;
+            background-color: #666; /* Gray button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white; /* White text for button */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* White hover effect */
+            transform: scale(1.05); /* Slightly enlarges the button */
+        }
+
+        .testimonials {
+            background-color: #333; /* Dark gray background for testimonials */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            color: white; /* White text */
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* White shadow for depth */
+        }
+
+        .testimonial {
+            font-style: italic;
+            padding: 10px;
+            border-bottom: 1px solid #666; /* Light gray border */
+        }
+
+        .testimonial:last-child {
+            border-bottom: none;
+        }
+
+        .testimonial p {
+            margin: 0;
+        }
+
+        .testimonial span {
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore the Wonders of Kathmandu</h1>
+        <p>Your adventure begins here!</p>
+        <img src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/4a8eeecd5c9854938f39e98a5144100052e91af8/big-913b6140c12e08ffc98f736f2c99bb9b.jpg" alt="Kathmandu" style="max-width: 100%; height: auto;">
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#explore">Explore</a>
+        <a href="#attractions">Attractions</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container" id="about">
+        <h2>About Kathmandu</h2>
+        <p>Kathmandu, the capital of Nepal, is a city that merges ancient traditions with the modern world. As the gateway to the Himalayas, it is known for its beautiful scenery and rich cultural history. Whether you are trekking in the surrounding mountains or exploring the narrow alleys of its bustling streets, Kathmandu offers something for every traveler. The city is home to several UNESCO World Heritage Sites, including temples and monuments that date back centuries.</p>
+        <p>Kathmandu is also a melting pot of cultures and religions, where Buddhists and Hindus live harmoniously. The vibrant festivals, the intricate wood carvings, and the colorful street markets are just a few of the things that make this city so unique.</p>
+    </div>
+
+    <div class="container" id="explore">
+        <h2>Explore Kathmandu</h2>
+        <ul class="explore-list">
+            <li class="explore-item">
+                <img src="https://media.cnn.com/api/v1/images/stellar/prod/230626091957-01-nepal-lgbt-travel-kathmandu-pride-restricted.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Lifestyle">
+                <div>
+                    <h3>Lifestyle</h3>
+                    <p>Experience the daily life, traditions, and cultural diversity of the locals.</p>
+                </div>
+            </li>
+            <li class="explore-item">
+                <img src="https://www.pelago.co/img/products/NP-Nepal/kathmandu-full-day-sightseeing-tour-6hrs/5b9e8b97-bc3a-4aa0-b846-90134cb4d5cc_kathmandu-full-day-sightseeing-tour-6hrs-medium.jpg" alt="Attractions">
+                <div>
+                    <h3>Attractions</h3>
+                    <p>Discover historical sites, stunning architecture, and beautiful landscapes.</p>
+                </div>
+            </li>
+            <li class="explore-item">
+                <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0a/0d/3e/e9.jpg" alt="Food">
+                <div>
+                    <h3>Food</h3>
+                    <p>Indulge in traditional dishes that reflect the rich culinary heritage of Nepal.</p>
+                </div>
+            </li>
+            <li class="explore-item">
+                <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/f6/a0/8c.jpg" alt="Activities">
+                <div>
+                    <h3>Activities</h3>
+                    <p>Engage in trekking, cultural tours, and other exciting experiences.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container" id="attractions">
+        <h2>Attractions</h2>
+        <ul class="attractions-list">
+            <li class="attraction-item">
+                <img src="https://myrepublica.nagariknetwork.com/uploads/media/2018/November/Swayambhunath_Nov14.jpg" alt="Swayambhunath Stupa">
+                <h3>Swayambhunath Stupa (Monkey Temple)</h3>
+                <p>A UNESCO World Heritage Site, Swayambhunath offers panoramic views of Kathmandu.</p>
+            </li>
+            <li class="attraction-item">
+                <img src="https://web.nepalnews.com/storage/story/1024/pashupatinath_is_the1687427318_1024.jpg" alt="Pashupatinath Temple">
+                <h3>Pashupatinath Temple</h3>
+                <p>One of the holiest Hindu temples, known for its beautiful architecture and sacred rituals.</p>
+            </li>
+            <li class="attraction-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Boudhanath_Stupa-IMG_7048.jpg" alt="Boudhanath Stupa">
+                <h3>Boudhanath Stupa</h3>
+                <p>The largest stupa in Nepal, a hub of Tibetan Buddhism with a rich history.</p>
+            </li>
+            <li class="attraction-item">
+                <img src="https://cdn.bodhitoursandtreks.com/site/assets/files/1309/himalayandestiny-kathmandu-durbar-square.jpg" alt="Durbar Square">
+                <h3>Durbar Square</h3>
+                <p>A historical plaza that showcases the art and architecture of the Malla kings.</p>
+            </li>
+            <li class="attraction-item">
+                <img src="https://www.nepaltraveladventure.com/blog/wp-content/uploads/2023/03/thamel-market.jpg" alt="Thamel Market">
+                <h3>Thamel Market</h3>
+                <p>A bustling area filled with shops, restaurants, and vibrant street life.</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
